@@ -1,6 +1,6 @@
 <?php
 
-use panix\engine\WebApplication;
+
 
 error_reporting(E_ALL);
 //Timezone
@@ -24,12 +24,12 @@ require(__DIR__ . '/../shopium24.loc/vendor/autoload.php');
 
 
 $config = yii\helpers\ArrayHelper::merge(
-    require __DIR__ . '/../shopium24.loc/frontend/config/frontend.php',
-    require __DIR__ . '/../config/web.php',
+    require __DIR__ . '/../shopium24.loc/frontend/config/web.php',
+    require __DIR__ . '/config/web.php'
 );
 
 //use yii\web\Application;
-
+use panix\engine\WebApplication;
 
 $app = new WebApplication($config);
 //Yii::setAlias('@bower', dirname(__DIR__) . '/vendor/bower-asset');
