@@ -24,7 +24,7 @@ require __DIR__ . '/../shopium24.loc/vendor/yiisoft/yii2/Yii.php';
 
 
 $config = yii\helpers\ArrayHelper::merge(
-    require __DIR__ . '/../shopium24.loc/frontend/config/web.php',
+    require __DIR__ . '/../shopium24.loc/config/web.php',
     require __DIR__ . '/config/web.php'
 );
 

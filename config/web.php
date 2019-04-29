@@ -22,8 +22,14 @@ $config = [
             'schemaCache' => 'cache',
 
         ],
+        'view' => [
+            'theme' => [
+                //'class' => 'panix\engine\base\Theme',
+                'name'=>'test'
+            ],
+        ],
     ],
-    'params' => require(dirname(__DIR__) . '/../shopium24.loc/common/config/params.php'),
+    'params' => require(dirname(__DIR__) . '/../shopium24.loc/config/params.php'),
 ];
 
 return $config;
