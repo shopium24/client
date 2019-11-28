@@ -1,17 +1,17 @@
 <?php
-
-Yii::setAlias('@client', dirname(__DIR__));
-
+Yii::setAlias('@core', CORE_PATH);
 $config = [
     'id' => 'client',
-    'basePath' => dirname(__DIR__) . '/../shopium24.loc', //if in web dir
-    //'vendorPath' => dirname(__DIR__).'/../shopium24.loc/vendor',
-    //'basePath' => dirname(__DIR__),
-    'runtimePath' => '@client/runtime',
+    'vendorPath' => CORE_PATH . '/vendor',
+    'basePath' => dirname(__DIR__),
+    'runtimePath' => '@app/runtime',
+    'aliases' => [
+        '@core' => CORE_PATH,
+    ],
     'components' => [
         'db' => [
             'class' => 'panix\engine\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=shopium24',
+            'dsn' => 'mysql:host=localhost;dbname=yii2',
             'username' => 'root',
             'password' => '47228960panix',
             'charset' => 'utf8mb4',
@@ -24,12 +24,11 @@ $config = [
         ],
         'view' => [
             'theme' => [
-                //'class' => 'panix\engine\base\Theme',
-                'name'=>'test'
+                'name' => 'autima'
             ],
         ],
     ],
-    'params' => require(dirname(__DIR__) . '/../shopium24.loc/config/params.php'),
+    'params' => require(CORE_PATH . '/config/params.php'),
 ];
 
 return $config;
