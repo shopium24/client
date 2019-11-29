@@ -10,7 +10,7 @@ $config = [
     ],
     'components' => [
         'db' => [
-            'dsn' => 'mysql:host=localhost;dbname=yii2',
+            'dsn' => 'mysql:host=localhost;dbname=s24_c1',
             'username' => 'root',
             'password' => '47228960panix',
             'tablePrefix' => 'cms_',
