@@ -1,25 +1,20 @@
 AddDefaultCharset UTF-8
 
- RewriteEngine On
+RewriteEngine On
 
-    # если /admin, то в backend
-    RewriteCond %{REQUEST_URI} ^/(admin)
-    RewriteRule ^admin/assets/(.*)$ admin/assets/$1 [L]
-    RewriteRule ^admin/css/(.*)$ admin/css/$1 [L]
-    RewriteRule ^admin/js/(.*)$ admin/js/$1 [L]
-    RewriteCond %{REQUEST_URI} !^/admin/(assets|css|js)/
-    RewriteCond %{REQUEST_URI} ^/(admin)
-    RewriteRule ^.*$ admin/index.php [L]
+# если /admin, то в backend
+RewriteCond %{REQUEST_URI} ^/(admin)
+RewriteRule ^.*$ admin/index.php [L]
 
 
-    RewriteCond %{REQUEST_URI} ^/(assets|css|js|images)
-    RewriteRule ^assets/(.*)$ web/assets/$1 [L]
-    RewriteRule ^css/(.*)$ web/css/$1 [L]
-    RewriteRule ^js/(.*)$ web/js/$1 [L]
-    RewriteRule ^images/(.*)$ web/images/$1 [L]
-    RewriteRule ^(.*)$ web/$1 [L]
-    RewriteCond %{REQUEST_URI} !^/(web|admin)/(assets|css|js)/
-    RewriteCond %{REQUEST_URI} !index.php
-    RewriteCond %{REQUEST_FILENAME} !-f [OR]
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^.*$ web/index.php
+RewriteCond %{REQUEST_URI} ^/(assets|css|js|images)
+RewriteRule ^assets/(.*)$ web/assets/$1 [L]
+RewriteRule ^css/(.*)$ web/css/$1 [L]
+RewriteRule ^js/(.*)$ web/js/$1 [L]
+RewriteRule ^images/(.*)$ web/images/$1 [L]
+RewriteRule ^(.*)$ web/$1 [L]
+RewriteCond %{REQUEST_URI} !^/(web|admin)/(assets|css|js)/
+RewriteCond %{REQUEST_URI} !index.php
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ web/index.php
