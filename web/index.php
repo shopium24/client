@@ -11,19 +11,19 @@ if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1') {
 } else {
     $env = 'prod';
     $debug = false;
-
 }
-defined('CORE_PATH') or define('CORE_PATH', __DIR__ . '/../../core');
+
+defined('COMMON_PATH') or define('COMMON_PATH', __DIR__ . '/../../common');
 defined('YII_DEBUG') or define('YII_DEBUG', $debug);
 defined('YII_ENV') or define('YII_ENV', $env);
 
-require CORE_PATH . '/vendor/autoload.php';
-require CORE_PATH . '/vendor/yiisoft/yii2/Yii.php';
+require COMMON_PATH . '/vendor/autoload.php';
+require COMMON_PATH . '/vendor/yiisoft/yii2/Yii.php';
 
 
 $config = yii\helpers\ArrayHelper::merge(
-    require CORE_PATH . '/config/common.php',
-    require CORE_PATH . '/config/web.php',
+    require COMMON_PATH . '/config/common.php',
+    require COMMON_PATH . '/config/web.php',
     require __DIR__ . '/../config/web.php'
 );
 
