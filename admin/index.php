@@ -13,6 +13,8 @@ if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1') {
     $debug = false;
 
 }
+$env = 'dev';
+$debug = true;
 defined('COMMON_PATH') or define('COMMON_PATH', __DIR__ . '/../../common');
 defined('YII_DEBUG') or define('YII_DEBUG', $debug);
 defined('YII_ENV') or define('YII_ENV', $env);

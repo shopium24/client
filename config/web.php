@@ -16,6 +16,9 @@ $config = [
             'tablePrefix' => 'cms_',
 
         ],
+        'request' => [
+            'cookieValidationKey' => 'fpsiKaSs1Mcb6zwlsUZwuhqScBs5UgPQ',
+        ],
         'view' => [
             'theme' => [
                 'name' => 'autima'
@@ -26,6 +29,15 @@ $config = [
         'plan_id' => 2,
     ],require(COMMON_PATH . '/config/params.php')),
 ];
+if (YII_ENV_DEV) {
+    // configuration adjustments for 'dev' environment
+    $config['modules']['debug']['class'] = 'yii\debug\Module';
+    $config['modules']['debug']['traceLine'] = function ($options, $panel) {
+        $filePath = $options['file'];
+        return strtr('<a href="phpstorm://open?url={file}&line={line}">{file}:{line}</a>', ['{file}' => $filePath]);
+    };
+    $config['modules']['debug']['dataPath'] = dirname(__DIR__).'/../common/runtime/debug';
+}
 
 return $config;
 
